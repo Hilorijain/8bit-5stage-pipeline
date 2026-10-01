@@ -27,15 +27,11 @@ A custom 8-bit RISC-style processor with a classic 5-stage pipeline (IF-ID-EX-ME
 
 **Load-use stall** — one bubble cycle inserted before the dependent instruction proceeds:
 
-![stall](waveforms/stall.png)
+![stall](waveforms/stall_hazard.png)
 
 **Branch flush** — wrong-path instruction squashed after a taken branch:
 
 ![branch flush](waveforms/branch_flush.png)
-
-**Backward branch (loop)** — PC redirects backward three times, then falls through on exit:
-
-![loop](waveforms/loop.png)
 
 **Forwarding** — EX/MEM forwarding mux selects the producer's result one cycle after it's computed:
 
@@ -46,3 +42,11 @@ A custom 8-bit RISC-style processor with a classic 5-stage pipeline (IF-ID-EX-ME
 Icarus Verilog + GTKWave for simulation and waveform debugging.
 
 ## Structure
+
+rtl/ all Verilog modules
+tb/ testbenches (single-cycle baseline, no-hazard pipeline,
+load-use, branch, integration, combined edge-case/loop)
+programs/ hand-assembled test programs in hex
+waveforms/ GTKWave screenshots referenced above
+
+
