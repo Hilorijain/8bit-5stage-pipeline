@@ -44,8 +44,7 @@ Icarus Verilog + GTKWave for simulation and waveform debugging.
 ## Structure
 
 - rtl/ all Verilog modules
-- tb/ testbenches (single-cycle baseline, no-hazard pipeline,
-- load-use, branch, integration, combined edge-case/loop)
+- tb/ testbenches (single-cycle baseline, no-hazard pipeline, load-use, branch, integration, combined edge-case/loop)
 - programs/ hand-assembled test programs in hex
 - waveforms/ GTKWave screenshots referenced above
 
